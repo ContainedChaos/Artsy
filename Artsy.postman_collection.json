@@ -1,0 +1,684 @@
+{
+	"info": {
+		"_postman_id": "cbfa6e7b-4132-4e35-8ea3-a94f4f68f64f",
+		"name": "Artsy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27471209"
+	},
+	"item": [
+		{
+			"name": "Auth & Profile",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Samia\",\r\n    \"email\": \"samiaaaa0120@gmail.com\",\r\n    \"password\": \"Samia123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"samiaaaa0120@gmail.com\",\r\n    \"password\": \"Samia123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "own profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/profiles",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update profile",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Samia Nawsheen\",\r\n    \"bio\": \"A 23 y/o that loves art!\",\r\n    \"currentPassword\": \"Samia1234\",\r\n    \"newPassword\": \"Samia123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/update-profile",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"update-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Forgot Password",
+			"item": [
+				{
+					"name": "forgot pass",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"samiaaaa0120@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/sendotp",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"sendotp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pass reset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\": \"3a40\",\r\n    \"password\": \"Samia1234\",\r\n    \"confirmPassword\": \"Samia1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/passwordreset",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"passwordreset"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Artworks",
+			"item": [
+				{
+					"name": "post art",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "json",
+									"value": "{ \"name\": \"Third Painting\", \"desc\": \"attempt at acrylics\" , \"tags\": [ \"easy\", \"acrylic\" ] }",
+									"type": "text"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"E:\\Artsy\\Acrylic flowers.jpg",
+										"E:\\Artsy\\Acrylic Portrait Video.mp4",
+										"E:\\Artsy\\Acrylic scenary video.mp4",
+										"E:\\Artsy\\Watercolor scenery.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/post-artwork",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"post-artwork"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update art",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "json",
+									"value": "{ \"name\": \"changed name\", \"desc\": \"Amateur attempt\", \"tags\": [ \"hard\", \"sketch\" ] }",
+									"type": "text"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"E:\\Artsy\\Sketch.jpg",
+										"E:\\Artsy\\Starry Night Cover Video.mp4"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/update-artwork/6592e925d110905731d34daa",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"update-artwork",
+								"6592e925d110905731d34daa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete art",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/delete-artwork/658d1c703022da1528803d34",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"delete-artwork",
+								"658d1c703022da1528803d34"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get own art",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/get-artworks",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"get-artworks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search & Explore",
+			"item": [
+				{
+					"name": "search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tags\": [\r\n        \"sketch\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/search",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "latest art",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/get-latest-artworks",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"get-latest-artworks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "artist profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/get-artist-profile/658ab117c7f3b18ba48aebe4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"get-artist-profile",
+								"658ab117c7f3b18ba48aebe4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get art details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/get-artwork-details/6592ea36d110905731d34dc0",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"get-artwork-details",
+								"6592ea36d110905731d34dc0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Follow",
+			"item": [
+				{
+					"name": "follow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"followingId\": \"6592e2e3d110905731d34d85\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/follow",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"follow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unfollow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"followingId\": \"658c4183a3cd33a640bcacab\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/unfollow",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"unfollow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get followers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/followers",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"followers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get following",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/following",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"following"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get art by followed users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/art-by-following",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"art-by-following"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Likes & Comments",
+			"item": [
+				{
+					"name": "like",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"artworkId\": \"6592f030d110905731d34e06\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/like",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unlike",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/unlike/658d1c703022da1528803d34",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"unlike",
+								"658d1c703022da1528803d34"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get likes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/getlikes/6592f030d110905731d34e06",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"getlikes",
+								"6592f030d110905731d34e06"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"artworkId\": \"6592f030d110905731d34e06\",\r\n    \"text\": \"Nice!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/comment",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update comment",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"Amazing!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/updatecomment/65928913ae6b0dda1d9ee6ab",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"updatecomment",
+								"65928913ae6b0dda1d9ee6ab"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/deletecomment/65928913ae6b0dda1d9ee6ab",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"deletecomment",
+								"65928913ae6b0dda1d9ee6ab"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/getcomments/6592f030d110905731d34e06",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"getcomments",
+								"6592f030d110905731d34e06"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
